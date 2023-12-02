@@ -1,10 +1,10 @@
-import extractBarcode from "extract-barcode";
+import extractBarcode from "zaid-extract-barcode";
 
 export async function decodeBarcode({ body, file }, { respond }) {
   try {
     const data = await extractBarcode(
       file.buffer,
-      "89824212-06bf-430d-8cb6-20cb3a20627d"
+      "744bc19a-4175-4a31-8146-03b02a730cd5"
     );
     return respond(200, "Success", { data });
   } catch (error) {

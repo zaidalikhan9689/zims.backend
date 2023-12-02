@@ -1,0 +1,23 @@
+{
+  "name": "extract-barcode",
+  "version": "1.0.3",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FSYED7X/zaid.one.lib.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FSYED7X/zaid.one.lib/issues"
+  },
+  "homepage": "https://github.com/FSYED7X/zaid.one.lib#readme",
+  "dependencies": {
+    "cloudmersive-barcodeapi-client": "^1.1.5"
+  }
+}
