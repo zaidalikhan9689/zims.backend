@@ -20,5 +20,5 @@ app.get(["/", "/api/"], (req, res) => {
 app.use("/api/", routes);
 
 app.listen("8000", function () {
-  console.log(`ZIMS SERVER STARTED : ${this.address().port}`);
+  console.log(`SERVER STARTED: ${this.address().port}`);
 });
