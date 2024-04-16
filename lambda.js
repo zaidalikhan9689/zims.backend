@@ -4,11 +4,11 @@ import https from "https";
 
 const dynamo = DynamoDBDocument.from(new DynamoDB());
 const TableName = "zaid";
-const barcodeApiUrl = (barcode) =>
+const barcodeApiUrl = (barcode) =>// declartion of Api
   `https://world.openfoodfacts.org/api/v0/product/${barcode}.json`;
 
 const currencies = ["INR", "USD", "GBP", "CAD"];
-const currencyConverterApiUrl =
+const currencyConverterApiUrl =// decalre 
   "https://f44dxfgsya.execute-api.eu-west-2.amazonaws.com/default/convert";
 
 function httpRequest(url, method = "GET", data = {}) {
@@ -64,10 +64,10 @@ export const handler = async (event) => {
         break;
       case "POST":
         const parsedBody = JSON.parse(event.body);
-        let barcodeInfo = await httpRequest(barcodeApiUrl(parsedBody.barcode));
+        let barcodeInfo = await httpRequest(barcodeApiUrl(parsedBody.barcode)); //public api use or call 
         barcodeInfo = JSON.parse(barcodeInfo);
 
-        const promises = currencies.map((currency) => {
+        const promises = currencies.map((currency) => {// use
           return httpRequest(currencyConverterApiUrl, "POST", {
             source_currency: "EUR",
             amount: parsedBody.price,
@@ -75,7 +75,7 @@ export const handler = async (event) => {
           });
         });
 
-        const currencyConversionresults = await Promise.all(promises);
+        const currencyConversionresults = await Promise.all(promises);// call 
 
         const currencyData = {};
 

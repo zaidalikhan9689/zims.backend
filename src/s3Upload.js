@@ -11,7 +11,7 @@ export async function s3Upload({ body, file }, { respond }) {
   };
 
   try {
-    const client = new S3Client({
+    const client = new S3Client({// authenctaication 
       credentials: {
         accessKeyId: "AKIA6GBMFDZOSVGSVVS6",
         secretAccessKey: "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",
@@ -19,7 +19,7 @@ export async function s3Upload({ body, file }, { respond }) {
       region: "ap-south-1",
     });
 
-    const putObjectCommand = new PutObjectCommand(params);
+    const putObjectCommand = new PutObjectCommand(params);// create command to upload file using prams line 5
     client.send(putObjectCommand);
 
     return respond(200, "Success", {
